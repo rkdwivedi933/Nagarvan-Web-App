@@ -67,13 +67,16 @@ useEffect(() => {
         </motion.div>
 
         {/* Heading */}
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <Trees className="w-8 h-8 text-[#3FB06F]" />
-          <GradientText className="text-center">
-            Nature & Landscapes
-          </GradientText>
-          <Trees className="w-8 h-8 text-[#3FB06F]" />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-4xl md:text-5xl font-extrabold text-[#C8F7C5] flex items-center gap-3 justify-center mt-4"
+        >
+          < Trees className="text-[#67d17e] w-8 h-8" />
+          <GradientText>Nature & <br /> Landscapes </GradientText>
+          < Trees className="text-[#67d17e] w-8 h-8" />
+        </motion.div>
 
         <p className="text-gray-300 text-lg italic text-center mt-3">
           "A green escape within the heart of Satna"

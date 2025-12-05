@@ -11,7 +11,7 @@ const BlogSection = () => {
       tag: "Conservation",
       tagIcon: "🌿",
       image:
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+        "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
       title: "Sustainable Tourism: A Path to...",
       description:
         "Explore how eco-tourism practices help preserve natural habitats and support local...",
@@ -24,7 +24,7 @@ const BlogSection = () => {
       tag: "Photography",
       tagIcon: "📷",
       image:
-        "https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=800&q=80",
+        "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG9ncmFwaHl8ZW58MHx8MHx8fDA%3D",
       title: "Wildlife Photography Tips a...",
       description:
         "Master the art of capturing stunning nature photography with professional tips and...",
@@ -37,7 +37,7 @@ const BlogSection = () => {
       tag: "Wellness",
       tagIcon: "🧘",
       image:
-        "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80",
+        "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800&q=80",
       title: "The Power of Meditation in Nature",
       description:
         "Discover how meditation in natural settings enhances mental well-being and reduces stress.",
@@ -63,13 +63,12 @@ const BlogSection = () => {
   const randomBubbles = Array.from({ length: 6 });
 
   const navigate = useNavigate();
-  const handleClickButton = () =>{
-    navigate('/blog')
-  }
+  const handleClickButton = () => {
+    navigate("/blog");
+  };
 
   return (
     <div className="min-h-full  relative overflow-hidden py-10 px-4">
-
       {/* BG Floating Bubbles */}
       {Array.from({ length: 8 }).map((_, i) => (
         <motion.div
@@ -91,7 +90,6 @@ const BlogSection = () => {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#2ECC71]/10 blur-[150px] rounded-full"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-
         {/* Badge */}
         <div className="flex justify-center mb-10">
           <Button variant="secondary">Nagar van Facilities</Button>
@@ -114,7 +112,6 @@ const BlogSection = () => {
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
           {blogs.map((blog) => (
             <motion.div
               key={blog.id}
@@ -175,7 +172,10 @@ const BlogSection = () => {
                     {blog.readTime}
                   </span>
 
-                  <button className="ml-auto flex cursor-pointer items-center gap-2 text-[#2ECC71] text-xs hover:gap-3 transition-all">
+                  <button
+                    onClick={() => navigate(`/blog-details/${blog.id}`)}
+                    className="ml-auto flex cursor-pointer items-center gap-2 text-[#2ECC71] text-xs hover:gap-3 transition-all"
+                  >
                     Read More →
                   </button>
                 </div>
@@ -186,7 +186,9 @@ const BlogSection = () => {
 
         {/* CTA */}
         <div className="flex justify-center mt-12">
-          <Button onClick={handleClickButton} variant="primary">Explore More Blogs</Button>
+          <Button onClick={handleClickButton} variant="primary">
+            Explore More Blogs
+          </Button>
         </div>
       </div>
     </div>

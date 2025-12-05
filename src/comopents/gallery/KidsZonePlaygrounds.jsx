@@ -67,18 +67,22 @@ const KidsZonePlaygrounds = () => {
           </Button>
         </motion.div>
 
+
+
+
+
         {/* Heading */}
-        <motion.div
+       <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-extrabold text-[#C8F7C5] flex items-center justify-center gap-3 mt-4"
+          className="text-4xl md:text-5xl font-extrabold text-[#C8F7C5] flex items-center gap-3 justify-center mt-4"
         >
-          <TreePine className="text-[#68d57b] w-8 h-8" />
-          <GradientText variant="primary">Kids Zone & Playgrounds</GradientText>
-          <TreePine className="text-[#68d57b] w-8 h-8" />
+          < TreePine className="text-[#67d17e] w-8 h-8" />
+          <GradientText>Kids zone</GradientText>
+          < TreePine className="text-[#67d17e] w-8 h-8" />
         </motion.div>
+
 
         {/* Subtitle */}
         <motion.p

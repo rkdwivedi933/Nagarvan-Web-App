@@ -11,6 +11,8 @@ import Attraction from "./pages/Attractions";
 import Gallery from "./pages/Gallery";
 import ScrollToTop from "./comopents/ScrollToTop";
 
+import BlogInfo from "./pages/BlogInfo";
+
 function App() {
   return (
     <Router>
@@ -23,6 +25,7 @@ function App() {
         <Route path="/attractions" element={<Attraction />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/blog-details/:id" element={<BlogInfo/>} />
       </Routes>
       <BackgroundWrapper>
         <Footer />

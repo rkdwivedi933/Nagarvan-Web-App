@@ -14,7 +14,6 @@ const FacilitiesSection = () => {
         "Fine dining experience with panoramic views. Enjoy delicious meals.",
       image:
         "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
-      hasExplore: true,
     },
     {
       id: 2,
@@ -25,7 +24,6 @@ const FacilitiesSection = () => {
         "Beautifully decorated garden ideal for weddings and celebrations.",
       image:
         "https://media.istockphoto.com/id/1400801171/photo/wedding-guest-setup-with-fresh-flowers.webp?a=1&b=1&s=612x612&w=0&k=20&c=UQyoBytEXCPDZMsOpQ5yA0J8v9FR7zg5Svd1jcQm0FI=",
-      hasExplore: true,
     },
     {
       id: 3,
@@ -36,7 +34,6 @@ const FacilitiesSection = () => {
         "Live music performances and cultural events under the stars.",
       image:
         "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=800&q=80",
-      hasExplore: true,
     },
     {
       id: 4,
@@ -47,7 +44,6 @@ const FacilitiesSection = () => {
         "Experience calmness with scenic walking tracks surrounded by greenery.",
       image:
         "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-      hasExplore: true,
     },
     {
       id: 5,
@@ -57,7 +53,6 @@ const FacilitiesSection = () => {
       description: "Secure and spacious parking facilities for all guests.",
       image:
         "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=800&q=80",
-      hasExplore: true,
     },
     {
       id: 6,
@@ -68,29 +63,43 @@ const FacilitiesSection = () => {
         "Clean and well-maintained facilities with modern amenities.",
       image:
         "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
-      hasExplore: true,
     },
   ];
 
   const floatBubble = {
+    initial: { y: 0, opacity: 0.4 },
     animate: {
-      y: [0, -15, 0],
-      x: [0, 8, 0],
-      transition: { repeat: Infinity, duration: 6, ease: "easeInOut" }
-    }
+      y: -20,
+      opacity: 0.8,
+      transition: {
+        repeat: Infinity,
+        duration: 3,
+        repeatType: "mirror",
+      },
+    },
   };
 
-  return (
-    <div className="min-h-full bg-linear-to-b relative overflow-hidden py-10 px-4 pb-5">
+  const randomBubbles = Array.from({ length: 6 });
 
-      {/* SOFT BACKGROUND LEAFS */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute top-[10%] left-[8%] text-7xl">🌿</div>
-        <div className="absolute top-[20%] right-[12%] text-6xl">🍃</div>
-        <div className="absolute bottom-[25%] left-[15%] text-5xl">🌿</div>
-        <div className="absolute top-[55%] right-[20%] text-6xl">🍃</div>
-        <div className="absolute bottom-[15%] right-[10%] text-5xl">🌿</div>
-      </div>
+  return (
+    <div className="min-h-full relative overflow-hidden py-10 px-4">
+
+      {/* Floating BG Bubbles same as Blog.jsx */}
+      {Array.from({ length: 8 }).map((_, i) => (
+        <motion.div
+          key={i}
+          variants={floatBubble}
+          initial="initial"
+          animate="animate"
+          className="absolute bg-green-300/10 rounded-full blur-3xl"
+          style={{
+            width: 120,
+            height: 120,
+            left: `${Math.random() * 90}%`,
+            top: `${Math.random() * 90}%`,
+          }}
+        ></motion.div>
+      ))}
 
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -116,89 +125,66 @@ const FacilitiesSection = () => {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {facilities.map((facility) => (
             <motion.div
               key={facility.id}
-              whileHover={{ y: -12, scale: 1.02 }}
+              whileHover={{ y: -12 }}
               transition={{ duration: 0.3 }}
-              className="relative rounded-3xl overflow-hidden 
-                         bg-[#0d3a1f]/80 border border-[#3FB06F]/20 
-                         shadow-[0_0_25px_rgba(63,176,111,0.25)]
-                         backdrop-blur-sm"
-                         
+              className="relative bg-[#0f3b27]/70 border border-[#2ECC71]/20 rounded-3xl 
+                         shadow-xl backdrop-blur-md overflow-hidden group"
             >
+              {/* Hover Neon Glow */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 
+                              group-hover:opacity-100 transition-all duration-300 
+                              blur-xl bg-[#2ECC71]/20"></div>
 
-              {/*  LEAF SILHOUETTE */}
-              <motion.div
-                animate={{ rotate: [0, 10, 0] }}
-                transition={{ duration: 8, repeat: Infinity }}
-                className="absolute -top-12 -left-10 text-[100px] opacity-[0.06]"
-              >
-                🍃
-              </motion.div>
+              {/* Internal Floating Bubbles */}
+              {randomBubbles.map((_, i) => (
+                <motion.div
+                  key={i}
+                  variants={floatBubble}
+                  initial="initial"
+                  animate="animate"
+                  className="absolute bg-green-200/10 rounded-full blur-xl"
+                  style={{
+                    width: 40,
+                    height: 40,
+                    left: `${20 + Math.random() * 60}%`,
+                    top: `${20 + Math.random() * 60}%`,
+                  }}
+                ></motion.div>
+              ))}
 
-              {/*  FLOATING BUBBLES */}
-              <motion.div
-                variants={floatBubble}
-                animate="animate"
-                className="absolute top-10 left-6 w-20 h-20 rounded-full 
-                           bg-linear-to-br from-green-300/20 to-green-500/30 blur-xl"
-              />
-
-              <motion.div
-                variants={floatBubble}
-                animate="animate"
-                className="absolute bottom-16 right-8 w-16 h-16 rounded-full 
-                           bg-linear-to-br from-green-200/10 to-green-400/20 blur-lg"
-              />
-
-              <motion.div
-                variants={floatBubble}
-                animate="animate"
-                className="absolute bottom-24 left-20 w-12 h-12 rounded-full 
-                           bg-linear-to-br from-green-400/20 to-green-300/20 blur-md"
-              />
-
-              {/*  NEON GLOW OUTER RING */}
-              <div className="absolute inset-0 rounded-3xl border border-[#3FB06F]/15 
-                              shadow-[0_0_35px_15px_rgba(63,176,111,0.15)]"></div>
-
-              {/* IMAGE */}
-              <div className="relative h-64 overflow-hidden">
+              {/* Image */}
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={facility.image}
-                  className="w-full h-full object-cover ]: transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover group-hover:scale-110 duration-700"
                 />
+                <div className="absolute inset-0 bg-linear-to-t from-black/70"></div>
               </div>
 
               {/* CONTENT */}
-              <div className="p-6 relative z-10">
-                <div className="flex items-start justify-between mb-4">
-
-                  <div className="flex items-center gap-4">
-                    <div
-                      className={`${facility.iconBg} w-14 h-14 rounded-2xl 
-                                  flex items-center justify-center text-2xl 
-                                  border border-white/10 backdrop-blur-sm`}
-                    >
-                      {facility.icon}
-                    </div>
-                    <h3 className="text-white text-2xl font-bold">
-                      {facility.title}
-                    </h3>
+              <div className="p-6 relative">
+                <div className="flex items-start gap-4 mb-4">
+                  <div
+                    className={`${facility.iconBg} w-14 h-14 rounded-2xl 
+                                flex items-center justify-center text-2xl 
+                                border border-white/20 backdrop-blur-sm`}
+                  >
+                    {facility.icon}
                   </div>
 
-                 
+                  <h3 className="text-white text-xl font-bold">
+                    {facility.title}
+                  </h3>
                 </div>
 
-                <p className="text-white/50 text-sm leading-relaxed mb-4">
+                <p className="text-white/60 text-sm leading-relaxed mb-4">
                   {facility.description}
                 </p>
-
-              
               </div>
-
             </motion.div>
           ))}
         </div>

@@ -176,7 +176,7 @@ const handleLogo = () =>{
 </div>
 
 
-      {/* Glow Bottom Border */}
+      {/* Glow Bottom Border ll*/}
       <div className="h-0.5 bg-linear-to-r from-transparent via-green-400/70 to-transparent"></div>
     </nav>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   Leaf,
   Clock,
@@ -12,9 +12,14 @@ import {
   Youtube,
 } from "lucide-react";
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
+    
     <footer className="relative bg-[#0c1f12] text-white overflow-hidden">
+      {/* Glow Bottom Border */}
+      <div className="h-0.5 bg-linear-to-r from-transparent via-green-400/70 to-transparent"></div>
 
       {/* LIGHT PATTERN OVERLAY */}
       <div className="absolute inset-0 opacity-[0.06] pointer-events-none bg-[url('/footer-pattern.svg')] bg-cover"></div>
@@ -63,21 +68,24 @@ const Footer = () => {
           <div>
             <h3 className="footer-title">Quick Links</h3>
 
-            <ul className="space-y-3 text-gray-300 text-[15px]">
-              {[
-                "About Us",
-                "Attractions",
-                "Gallery",
-                "Blog",
-                "Sustainability",
-                "Facilities",
-                "Contact Us",
-              ].map((item) => (
-                <li key={item} className="hover:text-green-400 cursor-pointer transition">
-                  {item}
-                </li>
-              ))}
-            </ul>
+           
+<ul className="space-y-3 text-gray-300 text-[15px]">
+  {[
+    { name: "About Us", path: "/about" },
+    { name: "Attractions", path: "/attractions" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Blog", path: "/blog" },
+    
+    { name: "Contact Us", path: "/contact" },
+  ].map((item) => (
+    <li
+      key={item.name}
+      className="hover:text-green-400 cursor-pointer transition"
+    >
+      <Link to={item.path}>{item.name}</Link>
+    </li>
+  ))}
+</ul>
           </div>
 
           {/* CONTACT */}

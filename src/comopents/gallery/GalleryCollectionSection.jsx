@@ -46,7 +46,7 @@ const GalleryCollectionSection = () => {
   }, [selectedIndex]);
 
   return (
-    <div className="relative py-10 ">
+    <div className="relative py-10  ">
     {/* HEADING */}
 <div className="text-center">
   <motion.div
@@ -94,7 +94,7 @@ const GalleryCollectionSection = () => {
 
 
       {/* GALLERY GRID */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-20">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-20 ">
 
         {galleryImages.map((image, index) => (
           <motion.div
@@ -103,7 +103,7 @@ const GalleryCollectionSection = () => {
             onClick={() => setSelectedIndex(index)}
             className="cursor-pointer"
           >
-            <div className="rounded-3xl overflow-hidden shadow-xl shadow-green-900/40">
+            <div className="rounded-3xl overflow-hidden shadow-xl shadow-green-900/40 ">
               <img
                 src={image}
                 className="h-[250px] md:h-[300px] w-full  object-cover"

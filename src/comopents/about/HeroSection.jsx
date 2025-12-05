@@ -131,22 +131,29 @@ const handleExploreStory = () =>{
             </motion.div>
 
             {/* Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-              className="flex gap-4 pt-4 h-16"
-            >
-              <Button  variant="primary" onClick={handleExploreStory}>Explore Our Story</Button>
+           <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.9 }}
+  className="flex flex-col md:flex-row gap-4 pt-4 h-auto md:h-16"
+>
+  <Button
+    variant="primary"
+    onClick={handleExploreStory}
+    className="h-12"
+  >
+    Explore Our Story
+  </Button>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-8  h-12 bg-transparent border-2 border-white/30 text-white font-semibold rounded-full hover:border-white/50 hover:bg-white/5 transition-all duration-300"
-              >
-                Contact Us
-              </motion.button>
-            </motion.div>
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.98 }}
+    className="px-8 h-12 bg-transparent border-2 border-white/30 text-white font-semibold rounded-full hover:border-white/50 hover:bg-white/5 transition-all duration-300"
+  >
+    Contact Us
+  </motion.button>
+</motion.div>
+
           </motion.div>
 
           {/* Right Side Content */}

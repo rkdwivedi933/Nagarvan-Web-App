@@ -48,17 +48,15 @@ useEffect(() => {
       <div className="max-w-7xl mx-auto">
         
         {/* Heading */}
-        <motion.div
+         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-extrabold text-[#C8F7C5]
-           flex items-center justify-center gap-3"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-4xl md:text-5xl font-extrabold text-[#C8F7C5] flex items-center gap-3 justify-center mt-4"
         >
-          <UtensilsCrossed className="text-[#68d57b] w-8 h-8" />
-          <GradientText variant="primary">Restaurant & Food Area</GradientText>
-          <TreePine className="text-[#68d57b] w-8 h-8" />
+          < UtensilsCrossed className="text-[#67d17e] w-8 h-8" />
+          <GradientText>Restaurant & <br /> Food Area </GradientText>
+          < UtensilsCrossed className="text-[#67d17e] w-8 h-8" />
         </motion.div>
 
         {/* Subtitle */}

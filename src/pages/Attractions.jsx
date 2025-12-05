@@ -11,11 +11,12 @@ import SelfiePointsSection from '../comopents/attractions/SelfiePointsSection'
 import MeditationHutsSection from '../comopents/attractions/MeditationHutsSection'
 import RestingZoneSection from '../comopents/attractions/RestingZoneSection '
 import AttractionBackground from '../comopents/layout/AttractionBackground'
+import BackgroundWrapper from '../comopents/layout/BackgroundWrapper'
 
 function Attraction() {
   return (
     <div>
-      <AttractionBackground>
+      <BackgroundWrapper>
 
       <ExploreAttractionsHero/>
       <GrandEntryPoint/>
@@ -28,7 +29,9 @@ function Attraction() {
       <SelfiePointsSection/>
       <MeditationHutsSection/>
       <RestingZoneSection/>
-      </AttractionBackground>
+      </BackgroundWrapper>
+
+      
     </div>
   )
 }

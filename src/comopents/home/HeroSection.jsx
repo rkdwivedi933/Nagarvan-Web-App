@@ -151,7 +151,7 @@ const handleExxploreButoon = () =>{
         {/* Title */}
         <motion.h1
           variants={titleVariants}
-          className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight drop-shadow-xl"
+          className="text-5xl md:text-7xl lg:text-8xl mt-5 font-extrabold leading-tight drop-shadow-xl"
         >
           <span className="text-white">Welcome </span>
 
@@ -229,10 +229,10 @@ const handleExxploreButoon = () =>{
               key={index}
               variants={cardVariants}
               whileHover={{ y: -8, scale: 1.03 }}
-              className="group relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-xl hover:shadow-emerald-500/20 transition-all"
+              className="group relative bg-white/10 py-2 px-10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-xl hover:shadow-emerald-500/20 transition-all"
             >
               <div
-                className={`absolute inset-0 bg-linear-to-br ${card.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-all`}
+                className={`absolute inset-0 bg-linear-to-br ${card.gradient} opacity-0 group-hover:opacity-10 rounded-2xl  transition-all`}
               />
 
               <div className="relative mb-4 flex justify-center">
@@ -268,7 +268,7 @@ const handleExxploreButoon = () =>{
               </div>
 
               <div
-                className={`absolute bottom-0 left-0 right-0 h-[3px] bg-linear-to-r ${card.gradient} opacity-0 group-hover:opacity-100 transition-all`}
+                className={`absolute bottom-0 left-2 right-2  h-[3px]  bg-linear-to-r ${card.gradient} opacity-0 group-hover:opacity-100 transition-all`}
               />
             </motion.div>
           ))}

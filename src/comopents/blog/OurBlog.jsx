@@ -2,89 +2,89 @@ import React from "react";
 import { motion } from "framer-motion";
 import Button from "../layout/Button";
 import GradientText from "../layout/GradientText";
+import { useNavigate } from "react-router-dom";
 
 const OurBlog = () => {
- const blogs = [
-  {
-    id: 1,
-    tag: "Conservation",
-    tagIcon: "🌿",
-    image:
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
-    title: "Sustainable Tourism: A Path to...",
-    description:
-      "Explore how eco-tourism practices help preserve natural habitats and support local...",
-    date: "Nov 1, 2025",
-    author: "TFP Technologies",
-    readTime: "5 min read",
-  },
-  {
-    id: 2,
-    tag: "Photography",
-    tagIcon: "📷",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
-    title: "Wildlife Photography Tips a...",
-    description:
-      "Master the art of capturing stunning nature photography with professional tips and...",
-    date: "Nov 12, 2024",
-    author: "Aman Singh Parihar",
-    readTime: "6 min read",
-  },
-  {
-    id: 3,
-    tag: "Wellness",
-    tagIcon: "🧘",
-    image:
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800&q=80",
-    title: "The Power of Meditation in Nature",
-    description:
-      "Discover how meditation in natural settings enhances mental well-being and reduces stress.",
-    date: "Nov 10, 2024",
-    author: "Mr. Ayush Dhar",
-    readTime: "4 min read",
-  },
-  {
-    id: 4,
-    tag: "Wildlife",
-    tagIcon: "🐾",
-    image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
-    title: "Understanding Animal Behavior",
-    description:
-      "Learn about how animals interact, survive, and adapt in their natural ecosystems.",
-    date: "Oct 20, 2024",
-    author: "Dr. Niharika Joshi",
-    readTime: "7 min read",
-  },
-  {
-    id: 5,
-    tag: "Adventure",
-    tagIcon: "⛰️",
-    image:
-      "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=800&q=80",
-    title: "Exploring Hidden Trails in Nature",
-    description:
-      "A guide to discovering lesser-known trails that offer peace, beauty, and adventure.",
-    date: "Sep 15, 2024",
-    author: "Rupesh Dwivedi",
-    readTime: "5 min read",
-  },
-  {
-    id: 6,
-    tag: "Environment",
-    tagIcon: "🌎",
-    image:
-      "https://images.unsplash.com/photo-1503264116251-35a269479413?w=800&q=80",
-    title: "Climate Awareness and You",
-    description:
-      "Simple steps everyone can take to protect the environment and reduce carbon impact.",
-    date: "Aug 28, 2024",
-    author: "TFP Technologies",
-    readTime: "3 min read",
-  },
-];
-
+  const blogs = [
+    {
+      id: 1,
+      tag: "Conservation",
+      tagIcon: "🌿",
+      image:
+        "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
+      title: "Sustainable Tourism: A Path to...",
+      description:
+        "Explore how eco-tourism practices help preserve natural habitats and support local...",
+      date: "Nov 1, 2025",
+      author: "TFP Technologies",
+      readTime: "5 min read",
+    },
+    {
+      id: 2,
+      tag: "Photography",
+      tagIcon: "📷",
+      image:
+        "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG9ncmFwaHl8ZW58MHx8MHx8fDA%3D",
+      title: "Wildlife Photography Tips a...",
+      description:
+        "Master the art of capturing stunning nature photography with professional tips and...",
+      date: "Nov 12, 2024",
+      author: "Aman Singh Parihar",
+      readTime: "6 min read",
+    },
+    {
+      id: 3,
+      tag: "Wellness",
+      tagIcon: "🧘",
+      image:
+        "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800&q=80",
+      title: "The Power of Meditation in Nature",
+      description:
+        "Discover how meditation in natural settings enhances mental well-being and reduces stress.",
+      date: "Nov 10, 2024",
+      author: "Mr. Ayush Dhar",
+      readTime: "4 min read",
+    },
+    {
+      id: 4,
+      tag: "Wildlife",
+      tagIcon: "🐾",
+      image:
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
+      title: "Understanding Animal Behavior",
+      description:
+        "Learn about how animals interact, survive, and adapt in their natural ecosystems.",
+      date: "Oct 20, 2024",
+      author: "Dr. Niharika Joshi",
+      readTime: "7 min read",
+    },
+    {
+      id: 5,
+      tag: "Adventure",
+      tagIcon: "⛰️",
+      image:
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=80",
+      title: "Exploring Hidden Trails in Nature",
+      description:
+        "A guide to discovering lesser-known trails that offer peace, beauty, and adventure.",
+      date: "Sep 15, 2024",
+      author: "Rupesh Dwivedi",
+      readTime: "5 min read",
+    },
+    {
+      id: 6,
+      tag: "Environment",
+      tagIcon: "🌎",
+      image:
+        "https://images.unsplash.com/photo-1503264116251-35a269479413?w=800&q=80",
+      title: "Climate Awareness and You",
+      description:
+        "Simple steps everyone can take to protect the environment and reduce carbon impact.",
+      date: "Aug 28, 2024",
+      author: "TFP Technologies",
+      readTime: "3 min read",
+    },
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -108,7 +108,7 @@ const OurBlog = () => {
       },
     },
   };
-
+  const navigate = useNavigate();
   return (
     <div className="min-h-full bg-linear-to-b  relative overflow-hidden py-10 px-4">
       {/* Leaf Pattern Overlay */}
@@ -132,30 +132,23 @@ const OurBlog = () => {
           transition={{ duration: 0.6 }}
           className="flex justify-center mb-8"
         >
-          <Button variant="secondary">🌿
-Blog & Stories from Nagar Van</Button>
+          <Button variant="secondary">🌿 Blog & Stories from Nagar Van</Button>
         </motion.div>
 
         {/* Heading */}
-     <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.2 }}
-  className="text-center mb-6"
->
-  <GradientText
-    variant="primary"
-    
-  >
-  Latest from & Our Blog
-  </GradientText>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-center mb-6"
+        >
+          <GradientText variant="primary">Latest from & Our Blog</GradientText>
 
-  <p className="text-white/50 text-base max-w-3xl mx-auto leading-relaxed mt-2">
-  Stay updated with insights, stories, and guides about our nature park
-  </p>
-</motion.div>
-
-
+          <p className="text-white/50 text-base max-w-3xl mx-auto leading-relaxed mt-2">
+            Stay updated with insights, stories, and guides about our nature
+            park
+          </p>
+        </motion.div>
 
         {/* Blog Cards */}
         <motion.div
@@ -244,7 +237,10 @@ Blog & Stories from Nagar Van</Button>
                     <span>{blog.readTime}</span>
                   </div>
 
-                  <button className="ml-auto cursor-pointer flex items-center gap-2 text-[#2ECC71] text-xs font-medium hover:gap-3 transition-all group/btn">
+                  <button
+                    onClick={() => navigate(`/blog-details/${blog.id}`)}
+                    className="ml-auto cursor-pointer flex items-center gap-2 text-[#2ECC71] text-xs font-medium hover:gap-3 transition-all group/btn"
+                  >
                     <span>Read More</span>
                     <svg
                       className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1"
@@ -269,8 +265,6 @@ Blog & Stories from Nagar Van</Button>
             </motion.article>
           ))}
         </motion.div>
-
-       
       </div>
     </div>
   );

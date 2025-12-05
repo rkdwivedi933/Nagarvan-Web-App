@@ -26,7 +26,7 @@ const GalleryBackground = ({ children }) => {
   );
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-linear-to-b bg-[#0c3a0f]">
+    <div className="relative w-full min-h-full  overflow-hidden bg-linear-to-b bg-[#0c3a0f] ">
       {/* Vignette + subtle grid to frame gallery */}
       <div className="absolute inset-0 pointer-events-none">
         {/* radial vignette */}
@@ -68,10 +68,10 @@ const GalleryBackground = ({ children }) => {
       })}
 
       {/* Central framed area for gallery content */}
-      <div className="relative z-20">
-        <div className="max-w-7xl mx-auto py-12 px-4">
+      <div className="relative z-20 ">
+        <div className="max-w-7xl mx-auto py-12 ">
           {/* Optional thin frame to highlight gallery area */}
-          <div className="relative rounded-2xl p-6 md:p-10  ">
+          <div className="relative rounded-2xl p-4 md:p-6  ">
             {children}
           </div>
         </div>

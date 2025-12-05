@@ -1,4 +1,4 @@
-import React from 'react'
+
 import GalleryCollectionSection from '../comopents/gallery/GalleryCollectionSection'
 import VideoMoments from '../comopents/gallery/VideoMoments'
 import GalleryBackground from '../comopents/layout/GalleryBackground.jsx'
@@ -12,8 +12,9 @@ import RestaurantFoodArea from '../comopents/gallery/RestaurantFoodArea.jsx'
 function Gallery() {
   return (
     <div>
-      <GalleryBackground>
+      <GalleryBackground >
        
+<div >
 
       <GalleryCollectionSection/>
       <VideoMoments/>
@@ -21,6 +22,7 @@ function Gallery() {
       <SelfiePoints/>
       <KidsZonePlaygrounds/>
       <RestaurantFoodArea/>
+</div>
       </GalleryBackground>
       
     </div>
