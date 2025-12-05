@@ -143,7 +143,7 @@ const QuickTipsMap = () => {
           </div>
 
           {/* Floating Info Box */}
-          <div className="absolute bottom-6 left-6 right-6 md:right-auto md:max-w-md bg-linear-to-br from-emerald-900/95 to-green-900/95 backdrop-blur-xl rounded-2xl p-6 border border-emerald-500/30 shadow-2xl">
+          <div className="absolute bottom-6 left-6 right-6 md:right-auto md:max-w-md bg-linear-to-br from-emerald-900/95 to-green-900/95 backdrop-blur-xl rounded-2xl p-2 border border-emerald-500/30 shadow-2xl">
             <div className="mb-4">
               <h3 className="text-white text-2xl font-bold mb-3">
                 Nagar Van Satna
@@ -157,7 +157,7 @@ const QuickTipsMap = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-3">
+            <div className="flex gap-3 ">
               <button
                 onClick={handleGetDirections}
                 onMouseEnter={() => setHoveredButton('directions')}

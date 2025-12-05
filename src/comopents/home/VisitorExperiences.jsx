@@ -104,7 +104,7 @@ const VisitorExperiences = () => {
 
   return (
     <section
-      className="bg-linear-to-b py-10 px-4 md:px-10 relative overflow-hidden"
+      className="bg-linear-to-b py-10 px- md:px-10 relative overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -159,8 +159,9 @@ const VisitorExperiences = () => {
           <div
             ref={scrollRef}
             className="
-              flex 
+              flex min-w-[260px]
               gap-10 sm:gap-12
+              
               overflow-x-hidden
               snap-x snap-mandatory
               hide-scroll
